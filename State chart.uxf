@@ -1,0 +1,92 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLSpecialState</id><coordinates><x>59</x><y>0</y><w>20</w><h>20</h></coordinates><panel_attributes>type=initial</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>59</x><y>10</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=-&gt;</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLState</id><coordinates><x>219</x><y>30</y><w>150</w><h>90</h></coordinates><panel_attributes>"Log in" selected
+--
+Request for username and  
+password
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>109</x><y>60</y><w>130</w><h>40</h></coordinates><panel_attributes>lt=-&gt;
+Select "Log in"</panel_attributes><additional_attributes>10;20;110;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>29</x><y>60</y><w>90</w><h>40</h></coordinates><panel_attributes>Idle</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>359</x><y>60</y><w>170</w><h>50</h></coordinates><panel_attributes>lt=-&gt;
+Enter username 
+and password</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>749</x><y>40</y><w>150</w><h>80</h></coordinates><panel_attributes>Logged in
+--
+Display function list
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>509</x><y>60</y><w>100</w><h>40</h></coordinates><panel_attributes>username and 
+password entered</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>459</x><y>80</y><w>120</w><h>150</h></coordinates><panel_attributes>lt=-&gt;
+Enter username 
+and password</panel_attributes><additional_attributes>70;130;10;130;10;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>599</x><y>60</y><w>170</w><h>60</h></coordinates><panel_attributes>lt=-&gt;
+Press "Log in"
+(username and
+password correct)</panel_attributes><additional_attributes>10;20;150;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>529</x><y>190</y><w>90</w><h>40</h></coordinates><panel_attributes>Rejected</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>559</x><y>90</y><w>130</w><h>120</h></coordinates><panel_attributes>lt=-&gt;
+Press "Log in"
+(username and
+password incorrect)</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>819</x><y>111</y><w>110</w><h>80</h></coordinates><panel_attributes>lt=-&gt;
+Select 
+"search a hall"</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLState</id><coordinates><x>759</x><y>170</y><w>150</w><h>100</h></coordinates><panel_attributes>"select  a hall" selected
+--
+Request for keyword
+including location, price 
+and type availability
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>829</x><y>261</y><w>70</w><h>90</h></coordinates><panel_attributes>lt=-&gt;
+Enter
+keyword</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLState</id><coordinates><x>759</x><y>430</y><w>150</w><h>80</h></coordinates><panel_attributes>Keyword matched
+--
+Display matching halls
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLState</id><coordinates><x>779</x><y>331</y><w>100</w><h>40</h></coordinates><panel_attributes>Keyword entered</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>599</x><y>271</y><w>220</w><h>80</h></coordinates><panel_attributes>lt=-&gt;
+Enter keyword</panel_attributes><additional_attributes>10;60;10;20;200;20;200;60</additional_attributes></element><element><id>Relation</id><coordinates><x>819</x><y>360</y><w>130</w><h>90</h></coordinates><panel_attributes>lt=-&gt;
+Press "Search"
+(match successful)</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLState</id><coordinates><x>559</x><y>330</y><w>90</w><h>40</h></coordinates><panel_attributes>Rejected</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>639</x><y>330</y><w>160</w><h>50</h></coordinates><panel_attributes>lt=-&gt;
+Press "Search"
+(No matching halls)</panel_attributes><additional_attributes>140;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>629</x><y>451</y><w>150</w><h>60</h></coordinates><panel_attributes>lt=-&gt;
+Select one
+of the halls 
+in the list</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>539</x><y>453</y><w>100</w><h>40</h></coordinates><panel_attributes>One hall selected</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>389</x><y>451</y><w>170</w><h>60</h></coordinates><panel_attributes>lt=-&gt;
+Select 
+"Request for 
+quotation"</panel_attributes><additional_attributes>150;20;10;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>249</x><y>430</y><w>150</w><h>120</h></coordinates><panel_attributes>"Request for quotation" 
+selected
+--
+Request sent to owner
+and sent back to customer 
+once quotation received
+from owner
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>119</x><y>451</y><w>150</w><h>50</h></coordinates><panel_attributes>lt=-&gt;
+Select 
+"View quotation"</panel_attributes><additional_attributes>130;20;10;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>39</x><y>452</y><w>90</w><h>40</h></coordinates><panel_attributes>"View quotation" 
+selected</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>59</x><y>481</y><w>110</w><h>140</h></coordinates><panel_attributes>lt=-&gt;
+Select one of 
+the quotations </panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>UMLState</id><coordinates><x>29</x><y>594</y><w>90</w><h>40</h></coordinates><panel_attributes>One quotation 
+selected</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>109</x><y>591</y><w>160</w><h>50</h></coordinates><panel_attributes>lt=-&gt;
+Select 
+"Book the hall"</panel_attributes><additional_attributes>10;20;140;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>249</x><y>570</y><w>150</w><h>100</h></coordinates><panel_attributes>"Book the hall" selected
+--
+Request for card number
+and PIN to pay  deposit
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>389</x><y>600</y><w>160</w><h>50</h></coordinates><panel_attributes>lt=-&gt;
+Enter card number
+ and PIN</panel_attributes><additional_attributes>10;20;140;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>529</x><y>600</y><w>100</w><h>40</h></coordinates><panel_attributes>card number and 
+PIN entered</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>619</x><y>600</y><w>160</w><h>60</h></coordinates><panel_attributes>lt=-&gt;
+Press "Pay"
+(card number and
+PIN correct)</panel_attributes><additional_attributes>10;20;140;20</additional_attributes></element><element><id>UMLState</id><coordinates><x>759</x><y>580</y><w>150</w><h>80</h></coordinates><panel_attributes>Deposit paid
+--
+Print reciept
+
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>579</x><y>630</y><w>120</w><h>110</h></coordinates><panel_attributes>lt=-&gt;
+Press "Pay"
+(card number and
+PIN incorrect)</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>UMLState</id><coordinates><x>539</x><y>720</y><w>90</w><h>40</h></coordinates><panel_attributes>Rejected</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>479</x><y>620</y><w>120</w><h>140</h></coordinates><panel_attributes>lt=-&gt;
+Enter card 
+number and PIN</panel_attributes><additional_attributes>60;120;10;120;10;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>809</x><y>650</y><w>110</w><h>90</h></coordinates><panel_attributes>lt=-&gt;
+Select "Log out"</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLState</id><coordinates><x>749</x><y>720</y><w>150</w><h>90</h></coordinates><panel_attributes>"Log out" selected
+--
+Log customer out
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>799</x><y>800</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=-&gt;
+</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>UMLSpecialState</id><coordinates><x>800</x><y>870</y><w>20</w><h>20</h></coordinates><panel_attributes>type=final</panel_attributes><additional_attributes></additional_attributes></element></diagram>
