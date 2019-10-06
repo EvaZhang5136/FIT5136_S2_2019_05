@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=User
+comment0.text=\n\ Write\ a\ description\ of\ class\ User\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=User()
+comment2.params=
+comment2.target=void\ welcome()
+comment3.params=
+comment3.target=void\ login()
+comment4.params=
+comment4.target=void\ register()
+numComments=5
