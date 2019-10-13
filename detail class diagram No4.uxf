@@ -1,0 +1,505 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>448</x>
+      <y>441</y>
+      <w>147</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>329</x>
+      <y>315</y>
+      <w>42</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>40.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>168</x>
+      <y>448</y>
+      <w>133</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>170.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>392</x>
+      <y>161</y>
+      <w>119</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=1..1
+have &gt;</panel_attributes>
+    <additional_attributes>10.0;50.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>749</x>
+      <y>644</y>
+      <w>147</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=1..n
+have &gt;</panel_attributes>
+    <additional_attributes>190.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>434</x>
+      <y>539</y>
+      <w>168</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=1..1
+&lt; write</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>714</x>
+      <y>182</y>
+      <w>126</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=1..1
+hold &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;160.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>742</x>
+      <y>448</y>
+      <w>182</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=1..1
+have &gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;240.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>742</x>
+      <y>406</y>
+      <w>119</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..1
+m2=1..1
+have &gt;</panel_attributes>
+    <additional_attributes>10.0;60.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>490</x>
+      <y>693</y>
+      <w>126</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..n
+m2=1..1																																																																																																																																																																																																																																																																																																																																																																																																																																
+&lt; have</panel_attributes>
+    <additional_attributes>160.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>714</x>
+      <y>105</y>
+      <w>357</w>
+      <h>476</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1..1
+m2=0..n																																																																																																																																																																																																																																																																																																																																																																																																																																
+&lt; have</panel_attributes>
+    <additional_attributes>470.0;660.0;380.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>287</x>
+      <y>406</y>
+      <w>168</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+User
+--
+-user_id: String
+-user_fName: String
+-user_lName: String
+-email: String
+-phoneNo: String
+-address: String
+--
++getUser_id():String
++setUser_id():void
++getUser_fName():String
++setUser_fName():void
++getUser_lName():String
++setUser_lName():void
++getEmail():String
++setEmail():void
++getPhoneNo():String
++setPhoneNo():void
++getAddress():String
++setAddress():void
++login():void
++logOut():void
++register():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>826</x>
+      <y>182</y>
+      <w>133</w>
+      <h>147</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Event
+--
+-event_name: String
+-event_type: String
+-event_date: date
+--
++setEvent_name():void
++getEvent_name():String
++setEvent_type():void
++getEvent_type():String
++setEvent_date():void
++getEvent_date():date</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>735</y>
+      <w>147</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Review
+--
+-review_date: date
+-review_description: String
+--
++getReview_date():
++setReview_date():
++getReview_description():
++setReview_description():
++writeReview():viod</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>497</x>
+      <y>49</y>
+      <w>224</w>
+      <h>308</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Hall
+--
+-hall_name: String
+-hall_address: String
+-hall_description: String
+-hall_function: String
+-hall_kinds: String
+-hall_price: double
+-hall_size: double
+-hall_availability: String
+--
++getHall_name():String
++setHall_name():void
++getHall_address():String
++setHall_address():void
++getHall_description():String
++setHall_description():void
++getHall_function():String
++setHall_function():void
++getHall_kinds():String
++setHall_kinds():void
++getHall_price():double
++setHall_price():void
++getHall_size():double
++setHall_size():void
++getHall_availability():String
++setHall_availability():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>847</x>
+      <y>350</y>
+      <w>147</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Discount
+--
+-discount_amount: double
+-discount_type: String
+--
++getDiscount_amount():double
++setDiscount_amount():void
++getDiscount_type():String
++setDiscount_amount():void
++getAddDiscount():double
++getRemoveDiscount():double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>994</x>
+      <y>7</y>
+      <w>224</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>«Control»
+Hall Controller
+--
+- hallList: ArrayList&lt;Hall&gt;
+--
++selectHall():Hall
++listHall(Object[][] rowData)：Array
++creatHall(String inputs):String
++deleteHall(int index):String
++updatetHall(String str, int rowColumn): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>714</x>
+      <y>49</y>
+      <w>294</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=*
+m2=1
+manages</panel_attributes>
+    <additional_attributes>10.0;20.0;400.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>882</x>
+      <y>567</y>
+      <w>210</w>
+      <h>287</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Quotation
+--
+-quotation_type: String
+-quotation_address: String
+-quotation_noOfAttendance: double
+-quotation_serve: boolean
+-quotation_catering: String
+-quotation_dateTime: String
+--
++getQuotation_type():String
++setQuotation_type():void
++getQuotation_address():String
++setQuotation_address():void
++getQuotation_noOfAttendance():double
++setQuotation_noOfAttendance():void
++getQuotation_serve():boolean
++setQuotation_serve():void
++getQuotation_catering():String
++setQuotation_catering():void
++getQuotation_dateTime():String
++setQuotation_dateTime():void
++getViewQuotation(String[]):Quotation
++getRequestQuotation(String[]):Quotation
++getAcceptQuotation():boolean
++getCancelQuotation():boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>602</x>
+      <y>609</y>
+      <w>154</w>
+      <h>231</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Booking
+--
+-booking_id: int
+-booking_title: String
+-booking_type: String
+-booking_description: String
+-booking_date: String
+--
++getBooking_id:int
++setBooking_id:void
++getBooking_title:String
++setBooking_title:void
++getBooking_type:String
++setBooking_type:void
++getBooking_description: String
++setBooking_description: void
++getBooking_date: String
++setBooking_date: void
++getCancelBooking:boolean
++getChangeBooking:boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1134</x>
+      <y>252</y>
+      <w>217</w>
+      <h>133</h>
+    </coordinates>
+    <panel_attributes>«Boundary»
+View
+--
+
+--
++createOwnerPage(): void
++createHallPage(): void
++createCustomerPage(): void
++createRegisterPage():void
++createLoginPage(): void
++createHallListPage(obeject[][] rowData): void
++writeReview(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>42</x>
+      <y>700</y>
+      <w>224</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>«Control»
+User Controller
+--
+-userList: ArrayList&lt;User&gt;
+--
++createUser():String
++deleteUser(int index):String
++selectUser():User
++updateUser(String str, int rowColumn):void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>210</x>
+      <y>119</y>
+      <w>189</w>
+      <h>203</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Owner
+--
+
+--
++getCreateHall(String[]):Hall
++getUpdateHall(String[]):Hall
++getDeleteHall(String[]):Hall
++getUpdateBooking(String[]):Booking
++getViewBooking(String[]):Booking
++getAddDiscount():double
++getRemoveDiscount():double
++getManagePayments():double
++getConfirmQuotation():boolean
++getDeleteQuotation():boolean
++getConfirmRefund():boolean
++setPrintReceipt():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>581</x>
+      <y>378</y>
+      <w>168</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Customer
+--
+-title: String
+--
++getTitle():String
++setTitle():void
++getViewHalls(String[]):Hall
++getSelectHalls(String[]):Hall
++getBookHalls(String[]):Hall
++getRequestQuotation(String[]):Quotation
++getViewBooking(String[]):Booking
++getChangeBookingDate():String
++getCancelBooking():boolean
++getWriteReview():String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>14</x>
+      <y>434</y>
+      <w>161</w>
+      <h>154</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Administrator
+--
+
+--
++getAddUsers(String[]):User
++getUpdateUsers(String[]):User
++getDeleteUsers(String[]):User
++getResetPassword():String
++getAddDiscount():double
++getDeleteDiscount():double
++setIdentifyPassword():void
++setIdentifyRoles():void</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
