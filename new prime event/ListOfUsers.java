@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class ListOfUsers
 {
     // instance variables - replace the example below with your own
-    private ArrayList<User> users;
+    public ArrayList<User> users;
 
     /**
      * Constructor for objects of class ListOfUsers

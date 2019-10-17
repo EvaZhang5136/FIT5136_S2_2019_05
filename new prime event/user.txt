@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
-
 A,k,ak@email.com,123,VIC,1,Apple
 b,t,bt@email.com,345,SA,1,Mango
+C,D,qw@email.com,678,QLD,2,Pear

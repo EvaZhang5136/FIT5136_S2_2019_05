@@ -1,6 +1,6 @@
 import java.util.Scanner;
 import java.util.ArrayList;
-
+import java.io.*;
 public class Controller
 {
     // instance variables - replace the example below with your own
@@ -12,7 +12,7 @@ public class Controller
     public Controller()
     {
         // initialise instance variables
-        //x = 0;
+        users = new ListOfUsers();
     }
 
     public void welcome()
@@ -26,7 +26,7 @@ public class Controller
         int w = console.nextInt();
         if (w == 1) 
         {
-            login();
+            logIn();
         }
         else if (w == 2) 
         {
@@ -39,12 +39,68 @@ public class Controller
             System.out.println("Press 0 to go back");
         }
     } 
-    
-    public void login()
-     {
-         
-     }
-     
+
+    public void logIn()
+    {
+        Scanner console = new Scanner(System.in);
+        System.out.println("Please enter email address: ");
+        String email = console.nextLine();
+        for(int i =0; i<5; i++){ //What is the range of i?
+            if(!email.equals(users.users.get(i).getEmail()))//Something wrong...
+            {System.out.println("Please go to register!");
+                register();
+            }
+            else{
+                System.out.println("Please enter your password:");
+                String passwd = console.nextLine();
+                if (!passwd.equals(users.users.get(i).getPasswd()))
+                {System.out.println("Wrong password!");
+                    passwd = console.nextLine();}
+                else{
+                    System.out.println("Log in successful!");
+                }
+            }
+        }
+        for(int a = 0; a<3; a++)
+            if(users.users.get(a).getType() == 1){
+                System.out.println("1. View halls");
+                System.out.println("2. Select a hall");
+                System.out.println("3. Book a hall");
+                System.out.println("4. Request for a quotation");
+                System.out.println("5. View a booking");
+                System.out.println("6. Change a booking");
+                System.out.println("7. Cancel a booking");
+                System.out.println("8. Write a review");
+                System.out.println("Please enter 1-8 to select：");
+            }
+            else if(users.users.get(a).getType() == 2){
+                System.out.println("1. Create a hall");
+                System.out.println("2. Update a hall");
+                System.out.println("3. Delete a hall");
+                System.out.println("4. Update a booking");
+                System.out.println("5. View a booking");
+                System.out.println("6. Add discount");
+                System.out.println("7. Remove discount");
+                System.out.println("8. Manage payments");
+                System.out.println("9. Confirm a quotation");
+                System.out.println("10. Delete a quotation");
+                System.out.println("11. Confirm a refund");
+                System.out.println("12. Print receipt");
+                System.out.println("Please enter 1-12 to select：");
+            }
+            else if(users.users.get(a).getType() == 3){
+                System.out.println("1. Add users");
+                System.out.println("2. Update users");
+                System.out.println("3. Delete users");
+                System.out.println("4. Reset password");
+                System.out.println("5. Add discount");
+                System.out.println("6. Delete discount");
+                System.out.println("7. Identify password");
+                System.out.println("8. Identify roles");
+                System.out.println("Please enter 1-8 to select：");  
+            }
+    }
+
     public void register()
     {
         ArrayList<String> user = new ArrayList<>();
@@ -68,8 +124,8 @@ public class Controller
         int type = console.nextInt();
         while(type != 1 && type != 2 && type != 3)
         {
-           System.out.println("Error!Please enter 1,2 or 3 if you are 1.Customer 2. Owner 3.Administrator");
-           type = console.nextInt();
+            System.out.println("Error!Please enter 1,2 or 3 if you are 1.Customer 2. Owner 3.Administrator");
+            type = console.nextInt();
         }
         String typeS = Integer.toString(type);
         user.add(5,typeS);
@@ -88,9 +144,29 @@ public class Controller
         String passwd = passwd1;
         user.add(6,passwd);
         user.add("\n");
-        users.writeFile(User user);//Not sure how to use this method.
+        //users.writeFile(User user);//Not sure how to use this method.
+    }
+
+    public void logOut()
+    {
+        Scanner console = new Scanner(System.in);
+        System.out.println("Are you sure to log out? \n 1: Continue to log out; \n 2: Back to last step.");
+        System.out.println("Please enter 1-2 to continue.");
+        int o=console.nextInt();
+        if (o == 1){
+            System.out.println("See ya~~~");
+
+        }
+        else if (o == 2){
+            System.out.println("Page will auto jump back to view halls...");
+
+        }
+
     }
     
+    public void requestQuotation()
+    {}
+
     public void bookHall()
     {
         bookings.readFile();
@@ -103,7 +179,7 @@ public class Controller
         int quotation = console.nextInt();
         if(quotation == 0)
         {
-            
+
         }
         else
         {

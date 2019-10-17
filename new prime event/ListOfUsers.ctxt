@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.target=ListOfUsers
-comment0.text=\n\ Write\ a\ description\ of\ class\ ListOfUsers\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ListOfUsers\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=ListOfUsers()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ ListOfUsers\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ListOfUsers\r\n
 comment2.params=newUsers
 comment2.target=ListOfUsers(java.util.ArrayList)
 comment3.params=
 comment3.target=void\ addUser()
-comment3.text=\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\n\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\n
+comment3.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\r\n\ @param\ \ y\ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\r\n
 comment4.params=
 comment4.target=java.util.ArrayList\ getListOfUsers()
 comment5.params=index

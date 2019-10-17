@@ -20,35 +20,35 @@ public class ListOfQuotations
         // initialise instance variables
         quotations = new ArrayList<Quotation>(5);
     }
-    
+
     public ListOfQuotations(ArrayList<Quotation> newQuotations)
     {
         // initialise instance variables
         quotations = newQuotations;
     }
-    
+
     public void addQuotation()
     {
         //Quotation racer = new Quotation();
         //racer.add(new Quotation());
-        
+
     }
 
     public ArrayList<Quotation> getListOfQuotations()
     {
         return quotations;
     }
-    
+
     public Quotation getSpecificQuotation(int index) throws NullPointerException
     {
         return quotations.get(index);
     }
-    
+
     public String getSpecificQuotationsName(int index) throws NullPointerException
     {
         return quotations.get(index).getName();
     }
-    
+
     public void readFile() //chnage void to STring and return something
     {
         String filename = ("quotations.txt");
@@ -66,15 +66,17 @@ public class ListOfQuotations
                     String name = quotationValues[0];
                     String date = quotationValues[1];
                     String time = quotationValues[2];
-                    
-                    
+                    String catering = quotationValues[3];
+                    String price = quotationValues[4];
 
                     Quotation quotation = new Quotation();
                     //booking.setBookingNo(bookingNo);
                     quotation.setName(name);
                     quotation.setDate(date);
                     quotation.setTime(time);
-                    
+                    quotation.setCatering(Boolean.parseBoolean(catering));
+                    //Plz check change String to boolean value--setCatering() is right or not?
+                    quotation.setPrice(Integer.parseInt(price));
 
                     quotations.add(quotation);
 
@@ -94,10 +96,8 @@ public class ListOfQuotations
         {
             System.out.println("Unexpected I/O exception occured");
         }
-        
-        
+
     }
-    
     public void writeFile(Quotation quotation)
     {
         String filename = "Quotations.txt";
@@ -106,6 +106,7 @@ public class ListOfQuotations
             FileWriter writer = new FileWriter(filename, true);
             BufferedWriter bw = new BufferedWriter(writer);
             bw.write("\n" + quotation.getName() + "," + quotation.getDate() + "," + quotation.getTime());
+            //bw.write() need to add boolean value getCatering() and int value getPrice()
             bw.flush();
         }
         catch(FileNotFoundException exception)
