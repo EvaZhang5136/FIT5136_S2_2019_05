@@ -15,7 +15,6 @@ public class Booking
   
     public Booking()
     {
-        //Timestamp bookingNo = ;
         String name = "";
         String date = "";
         String time = "";
@@ -88,16 +87,28 @@ public class Booking
     {
         ArrayList<String> file = new ArrayList<>();
         FileReader reader = null;
-        Scanner scanner = new Scanner(reader);
         try
         {
             reader = new  FileReader("Quotation.txt");
+            Scanner scanner = new Scanner(reader);
             while(scanner.hasNext())
             {
                 String line = scanner.nextLine();
                 file.add(line + "\n");
             }
             reader.close();
+            while(scanner.hasNextLine())
+            {
+                String[] line = scanner.nextLine().split(",");
+                String name1 = line[0];
+                String date1 = line[1];
+                String time1 = line[3];
+                Quotation quo = new Quotation();
+                quo.setName(name1);
+                quo.setDate(date1);
+                quo.setTime(time1);
+                quotations.add(quo);
+            }
         }
         catch(FileNotFoundException e)
         {
@@ -128,18 +139,7 @@ public class Booking
             System.out.println("Please enter you PIN:");
             int pin = console.nextInt();
             System.out.println("Transaction successful!");
-            while(scanner.hasNextLine())
-            {
-                String[] line = scanner.nextLine().split(",");
-                String name1 = line[0];
-                String date1 = line[1];
-                String time1 = line[3];
-                Quotation quo = new Quotation();
-                quo.setName(name1);
-                quo.setDate(date1);
-                quo.setTime(time1);
-                quotations.add(quo);
-            }
+            
             ArrayList<String> booking = new ArrayList<>();
             bookingNo = new Timestamp(System.currentTimeMillis());
             name = quotations.get(quotation).getName();

@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.target=Review
+comment1.params=author\ text
+comment1.target=Review(java.lang.String,\ java.lang.String)
+comment1.text=\n\ Create\ a\ comment\ with\ all\ necessary\ details.\ The\ initial\ vote\ balance\ is\ 0.\n
+comment2.params=
+comment2.target=java.time.LocalDateTime\ getTimestamp()
+comment3.params=
+comment3.target=java.lang.String\ getAuthor()
+comment3.text=\n\ Return\ the\ author\ of\ this\ comment.\n
+comment4.params=
+comment4.target=java.lang.String\ getFullDetails()
+comment4.text=\n\ Return\ the\ full\ text\ and\ details\ of\ the\ comment,\ including\ \n\ the\ comment\ text,\ author\ and\ rating.\n
+numComments=5

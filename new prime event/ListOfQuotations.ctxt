@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=ListOfQuotations
+comment0.text=\n\ Write\ a\ description\ of\ class\ ListOfQuattions\ here.\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
+comment1.params=
+comment1.target=ListOfQuotations()
+comment1.text=\n\ Constructor\ for\ objects\ of\ class\ ListOfQuattions\n
+comment2.params=newQuotations
+comment2.target=ListOfQuotations(java.util.ArrayList)
+comment3.params=
+comment3.target=void\ addQuotation()
+comment4.params=
+comment4.target=java.util.ArrayList\ getListOfQuotations()
+comment5.params=index
+comment5.target=Quotation\ getSpecificQuotation(int)
+comment6.params=index
+comment6.target=java.lang.String\ getSpecificQuotationsName(int)
+comment7.params=
+comment7.target=void\ readFile()
+comment8.params=quotation
+comment8.target=void\ writeFile(Quotation)
+numComments=9

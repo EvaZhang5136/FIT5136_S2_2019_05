@@ -156,11 +156,10 @@ public class User
         user.add(4,address);
         System.out.println("Please enter 1,2 or 3 if you are 1.Customer 2. Owner 3.Administrator");
         type = console.nextInt();
-        while(type != 1 || type != 2 || type != 3)
+        while(type != 1 && type != 2 && type != 3)
         {
            System.out.println("Error!Please enter 1,2 or 3 if you are 1.Customer 2. Owner 3.Administrator");
            type = console.nextInt();
-           //Always error!
         }
         String typeS = Integer.toString(type);
         user.add(5,typeS);
@@ -168,7 +167,6 @@ public class User
         passwd = console.nextLine();
         System.out.println("Please confirm your password：");
         String passwd2 = console.nextLine();
-        //Always come out at the same time
         while (!passwd.equals(passwd2))
         {
             System.out.println("Your passwords entered are not same.");
@@ -180,18 +178,16 @@ public class User
         user.add(6,passwd);
         user.add("\n");
         System.out.println(user);
+        String filename = "user.txt";
         try
         {
-            FileWriter writer = new FileWriter("user.txt");
+            FileWriter writer = new FileWriter(filename,true);
             BufferedWriter buffer = new BufferedWriter(writer);
             for(String str: user)
             {
-                writer.write(str.join(","));
-                //The arraylist can be printed correctly.
-                //But append nothing to the file.
+                buffer.write(str.join(","));
+                buffer.flush();
             }
-            writer.close();
-            buffer.close();
             System.out.println("Registeration successfully");
         }catch (IOException e)
         {      
