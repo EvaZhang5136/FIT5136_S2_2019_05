@@ -23,6 +23,88 @@ public class User
         String passwd = "";
     }
     
+    public User(String fname, String lname, String email, String phoneNo, 
+                String address, int type, String passwd)
+    {
+        this.fname = fname; 
+        this.lname = lname; 
+        this.email = email; 
+        this.phoneNo = phoneNo; 
+        this.address = address; 
+        this.type = type; 
+        this.passwd = passwd; 
+    }
+    
+    public String getFname()
+    {
+        return fname;
+    }
+    
+    public String getLname()
+    {
+        return lname;
+    }
+    
+    public String getEmail()
+    {
+        return email;
+    }
+    
+    public String getPhoneNO()
+    {
+        return phoneNo;
+    }
+    
+    public String getAddress()
+    {
+        return address;
+    }
+    
+    public int getType()
+    {
+        return type;
+    }
+    
+    public String getPasswd()
+    {
+        return passwd;
+    }
+    
+    public void setFname(String fname)
+    {
+        this.fname = fname;
+    }
+    
+    public void setLname(String lname)
+    {
+        this.lname = lname;
+    }
+    
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+    
+    public void setPhoneNo(String phoneNo)
+    {
+        this.phoneNo = phoneNo;
+    }
+    
+    public void setAddress(String address)
+    {
+        this.address = address;
+    }
+    
+    public void setType(int type)
+    {
+        this.type = type;
+    }
+    
+    public void setPasswd(String passwd)
+    {
+        this.passwd = passwd;
+    }
+    
     public void welcome()
     {
         Scanner console = new Scanner(System.in);

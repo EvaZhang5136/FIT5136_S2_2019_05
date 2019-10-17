@@ -11,8 +11,8 @@ public class Booking
     private String time;
     private int status;//1.Ongoing 2. Complished
     private ArrayList<Review> reviews;
-    
-
+    private ArrayList<Quotation> quotations;
+  
     public Booking()
     {
         //Timestamp bookingNo = ;
@@ -22,6 +22,32 @@ public class Booking
         int status = 1; 
         reviews = new ArrayList<>();
     }
+    
+    public Timestamp getBookingNo()
+    {
+        return bookingNo;
+    }
+    
+    public String getName()
+    {
+        return name;
+    }
+    
+    public String getDate()
+    {
+        return date;
+    }
+    
+    public String getTime()
+    {
+        return time;
+    }
+    
+    public int getStatus()
+    {
+        return status;
+    }
+    
     
     /**
      * Return the number of customer comments for this item.
@@ -62,10 +88,10 @@ public class Booking
     {
         ArrayList<String> file = new ArrayList<>();
         FileReader reader = null;
+        Scanner scanner = new Scanner(reader);
         try
         {
             reader = new  FileReader("Quotation.txt");
-            Scanner scanner = new Scanner(reader);
             while(scanner.hasNext())
             {
                 String line = scanner.nextLine();
@@ -102,11 +128,23 @@ public class Booking
             System.out.println("Please enter you PIN:");
             int pin = console.nextInt();
             System.out.println("Transaction successful!");
+            while(scanner.hasNextLine())
+            {
+                String[] line = scanner.nextLine().split(",");
+                String name1 = line[0];
+                String date1 = line[1];
+                String time1 = line[3];
+                Quotation quo = new Quotation();
+                quo.setName(name1);
+                quo.setDate(date1);
+                quo.setTime(time1);
+                quotations.add(quo);
+            }
             ArrayList<String> booking = new ArrayList<>();
             bookingNo = new Timestamp(System.currentTimeMillis());
-            name = file.get(quotation);//.getName();
-            date = file.get(quotation);//.getDate();
-            time = file.get(quotation);//.getTime();
+            name = quotations.get(quotation).getName();
+            date = quotations.get(quotation).getDate();
+            time = quotations.get(quotation).getTime();
             status = 1;
             booking.add(0,bookingNo.toString());
             booking.add(1,name);
@@ -115,6 +153,7 @@ public class Booking
             String statusS = Integer.toString(status);
             booking.add(4,statusS);
             booking.add("\n");
+            
             try
             {
                 FileWriter writer = new FileWriter("Booking.txt");
