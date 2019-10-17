@@ -123,5 +123,19 @@ public class Hall
         hallAvailability = newAvailability;
     }
     
-    
+    public String getFullDetails()
+    {
+        String details = "Hall Name: " + hallName + "    "
+                         + "Hall Address : " + hallAddr + "\n"
+                         + "Hall Description :" + hallDesc + "\n"
+                         + "Hall Function :" + hallFunction + "\n"
+                         + "Hall Price : " + hallPrice + "\n"
+                         + "Hall Size : " + hallSize + "\n"
+                         + "Hall Availability : " + hallAvailability + "\n";
+        // Note: 'votes' is currently included for testing purposes only. In the final
+        // application, this will nt be shown. Instead, the vote count will be used to 
+        // select and order the comments on screen.
+       
+        return details;
+    }
 }

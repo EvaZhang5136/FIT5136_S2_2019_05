@@ -10,6 +10,8 @@ public class Booking
     private String date;
     private String time;
     private int status;//1.Ongoing 2. Complished
+    private ArrayList<Review> reviews;
+    
 
     public Booking()
     {
@@ -18,6 +20,42 @@ public class Booking
         String date = "";
         String time = "";
         int status = 1; 
+        reviews = new ArrayList<>();
+    }
+    
+    /**
+     * Return the number of customer comments for this item.
+     */
+    public int getNumberOfReviews()
+    {
+        return reviews.size();
+    }
+    
+    /**
+     * Add a comment to the comment list of this sales item. Return true if successful;
+     * false if the comment was rejected.
+     * 
+     * The comment will be rejected if the same author has already left a comment, or
+     * if the rating is invalid. Valid ratings are numbers between 1 and 5 (inclusive).
+     */
+    public boolean addReview(String author, String text)
+    {
+        //if(reviews.getTimestamp() == Booking.getTime()) {  // reject invalid ratings
+          //  return false;
+        //}
+        
+        reviews.add(new Review(author, text));
+        return true;
+    }
+    
+    /**
+     * Remove the comment stored at the index given. If the index is invalid, do nothing.
+     */
+    public void removeComment(int index)
+    {
+        if(index >=0 && index < reviews.size()) { // if index is valid
+            reviews.remove(index);
+        }
     }
 
     public void bookHall()
