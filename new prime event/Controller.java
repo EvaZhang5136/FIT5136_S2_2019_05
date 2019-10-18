@@ -158,14 +158,56 @@ public class Controller
 
         }
         else if (o == 2){
-            System.out.println("Page will auto jump back to view halls...");
+            System.out.println("Auto jump back to previous page...");
 
         }
 
     }
-    
+
     public void requestQuotation()
-    {}
+    {
+        ArrayList<String> quotation = new ArrayList<>();
+        Scanner console = new Scanner(System.in);
+
+        System.out.println("Enter the hall name: ");
+        String name = console.nextLine();
+        quotation.add(0,name);
+
+        System.out.println("Enter the date(dd/mm/yyyy): ");
+        String date = console.nextLine();
+        quotation.add(1,date);
+
+        System.out.println("Enter the time(hh): ");
+        String time = console.nextLine();
+        quotation.add(2,time);
+
+        System.out.println("Do you need catering? \n 1: Yes, I do.(Need to pay extra 20 dollars.); \n 2: No, I don't.");
+        int c =console.nextInt();
+        if (c == 1){
+            System.out.println("Ctering had been selected");
+
+        }
+        else if (c == 2){
+            System.out.println("Add $0");
+
+        }
+        String catering = console.nextLine();
+        quotation.add(3,catering);
+
+        //System.out.println("The final price is: " + quotations.quotations.getCatering());
+        //How can I add the price?
+        System.out.println("Are you sure to continue? \n 1: Yes, I will book this hall; \n 2: No, back to last step.");
+        System.out.println("Please enter 1-2 to continue.");
+        int q=console.nextInt();
+        if (q == 1){
+            System.out.println("Auto jump to Booking the hall...");
+            bookHall();
+        }
+        else if (q== 2){
+            System.out.println("Auto jump back to previous page...");
+
+        }
+    }
 
     public void bookHall()
     {

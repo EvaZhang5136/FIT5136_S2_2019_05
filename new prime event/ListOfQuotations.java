@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class ListOfQuotations
 {
     // instance variables - replace the example below with your own
-    private ArrayList<Quotation> quotations;
+    public ArrayList<Quotation> quotations;
 
     /**
      * Constructor for objects of class ListOfQuattions

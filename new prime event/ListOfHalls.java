@@ -12,7 +12,7 @@ import java.util.Random;
 public class ListOfHalls
 {
     // instance variables - replace the example below with your own
-    private ArrayList<Hall> halls;
+    public ArrayList<Hall> halls;
     // A parser for handling user commands.
     //private Parser parser;
 
