@@ -27,16 +27,20 @@ public class ListOfQuotations
         quotations = newQuotations;
     }
 
-    public void addQuotation()
+    public void addQuotation(String newName, String newDate, String newTime, int newCatering, int newPrice)
     {
-        //Quotation racer = new Quotation();
-        //racer.add(new Quotation());
-
+        //User racer = new User();
+        quotations.add(new Quotation(newName, newDate, newTime, newCatering, newPrice));
     }
 
     public ArrayList<Quotation> getListOfQuotations()
     {
         return quotations;
+    }
+    
+    public int getNoOfQuotations()
+    {
+        return quotations.size();
     }
 
     public Quotation getSpecificQuotation(int index) throws NullPointerException
@@ -48,10 +52,30 @@ public class ListOfQuotations
     {
         return quotations.get(index).getName();
     }
+    
+    public String getSpecificQuotationsTime(int index) throws NullPointerException
+    {
+        return quotations.get(index).getTime();
+    }
+    
+    public String getSpecificQuotationsDate(int index) throws NullPointerException
+    {
+        return quotations.get(index).getDate();
+    }
+    
+    public int getSpecificQuotationsCatering(int index) throws NullPointerException
+    {
+        return quotations.get(index).getCatering();
+    }
+    
+    public int getSpecificQuotationsPrice(int index) throws NullPointerException
+    {
+        return quotations.get(index).getPrice();
+    }
 
     public void readFile() //chnage void to STring and return something
     {
-        String filename = ("quotations.txt");
+        String filename = ("Quotation.txt");
         try
         {
             FileReader inputFile = new FileReader(filename);
@@ -74,7 +98,7 @@ public class ListOfQuotations
                     quotation.setName(name);
                     quotation.setDate(date);
                     quotation.setTime(time);
-                    quotation.setCatering(Boolean.parseBoolean(catering));
+                    quotation.setCatering(Integer.parseInt(catering));
                     //Plz check change String to boolean value--setCatering() is right or not?
                     quotation.setPrice(Integer.parseInt(price));
 
@@ -98,14 +122,21 @@ public class ListOfQuotations
         }
 
     }
-    public void writeFile(Quotation quotation)
+    
+    public void writeFile()
     {
-        String filename = "Quotations.txt";
+        String filename = "Quotation.txt";
+        int index = getNoOfQuotations() - 1;
         try
         {
             FileWriter writer = new FileWriter(filename, true);
             BufferedWriter bw = new BufferedWriter(writer);
-            bw.write("\n" + quotation.getName() + "," + quotation.getDate() + "," + quotation.getTime());
+            bw.newLine();
+            bw.write(getSpecificQuotationsName(index) + 
+                      "," + getSpecificQuotationsDate(index) + 
+                      "," + getSpecificQuotationsTime(index) +
+                      "," + getSpecificQuotationsCatering(index) +
+                      "," + getSpecificQuotationsPrice(index));
             //bw.write() need to add boolean value getCatering() and int value getPrice()
             bw.flush();
         }

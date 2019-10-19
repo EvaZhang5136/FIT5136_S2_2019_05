@@ -23,6 +23,16 @@ public class Booking
         //reviews = new ArrayList<>();
     }
     
+    public Booking(String newName, String newDate, String newTime, int newStatus)
+    {
+        //Timestamp bookingNo = ;
+        String name = newName;
+        String date = newDate;
+        String time = newTime;
+        int status = newStatus; 
+        //reviews = new ArrayList<>();
+    }
+    
     /**
      * Return the number of customer comments for this item.
      

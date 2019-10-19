@@ -19,6 +19,16 @@ public class User
         String passwd = "";
     }
     
+    public User(String newFname, String newLname, String newEmail, String newPhone, String newAddr, int newType, String newPasswd)
+    {
+        String fname = newFname;
+        String lname = newLname;
+        String email = newEmail;
+        String phoneNo = newPhone;
+        String address = newAddr;
+        int type = newType;//1.Customer 2.Owner 3.Admin
+        String passwd = newPasswd;
+    }
     public String getFullName()
     {
         String fullName = getFname() + " " + getLname();

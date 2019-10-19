@@ -55,9 +55,35 @@ public class ListOfBookings
         return bookings.get(index).getName();
     }
     
+    public int getNoOfBookings()
+    {
+        return bookings.size();
+    }
+    
+    public String getSpecificBookingsDate(int index) throws NullPointerException
+    {
+        return bookings.get(index).getDate();
+    }
+    
+    public String getSpecificBookingsTime(int index) throws NullPointerException
+    {
+        return bookings.get(index).getTime();
+    }
+    
+    public int getSpecificBookingsStatus(int index) throws NullPointerException
+    {
+        return bookings.get(index).getStatus();
+    }
+    
+    public void addBooking(String newName, String newDate, String newTime, int newStatus)
+    {
+        //User racer = new User();
+        bookings.add(new Booking(newName, newDate, newTime, newStatus));
+    }
+    
     public void readFile() //chnage void to STring and return something
     {
-        String filename = ("bookings.txt");
+        String filename = ("Booking.txt");
         try
         {
             FileReader inputFile = new FileReader(filename);
@@ -72,6 +98,7 @@ public class ListOfBookings
                     String name = bookingValues[0];
                     String date = bookingValues[1];
                     String time = bookingValues[2];
+                    String status = bookingValues[3];
                     
                     
 
@@ -80,6 +107,7 @@ public class ListOfBookings
                     booking.setName(name);
                     booking.setDate(date);
                     booking.setTime(time);
+                    booking.setStatus(Integer.parseInt(status));
                     
 
                     bookings.add(booking);
@@ -106,12 +134,17 @@ public class ListOfBookings
     
     public void writeFile(Booking booking)
     {
-        String filename = "bookings.txt";
+        String filename = "Booking.txt";
+        int index = getNoOfBookings() -1;
         try
         {
             FileWriter writer = new FileWriter(filename, true);
             BufferedWriter bw = new BufferedWriter(writer);
-            bw.write("\n" + booking.getName() + "," + booking.getDate() + "," + booking.getTime() + "," + booking.getStatus());
+            bw.newLine();
+            bw.write(getSpecificBookingsName(index) + 
+                      "," + getSpecificBookingsDate(index) + 
+                      "," + getSpecificBookingsTime(index) +
+                      "," + getSpecificBookingsStatus(index));
             bw.flush();
         }
         catch(FileNotFoundException exception)

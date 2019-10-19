@@ -10,28 +10,28 @@ public class Quotation
     private String name;
     private String date;
     private String time;
-    private boolean catering;
+    private int catering;
     private int price;
-
-    /**
-     * Constructor for objects of class Quotation
-     */
-    public Quotation(String newName, String newDate, String newTime, boolean newCatering, int newPrice)
-    {
-        name = newName;
-        date = newDate;
-        time = newTime;
-        catering = newCatering;
-        price = newPrice;
-    }
 
     public Quotation()
     {
         name = "";
         date = "";
         time = "";
-        catering = true;
+        catering = 2;
         price = 0;
+    }
+    
+    /**
+     * Constructor for objects of class Quotation
+     */
+    public Quotation(String newName, String newDate, String newTime, int newCatering, int newPrice)
+    {
+        name = newName;
+        date = newDate;
+        time = newTime;
+        catering = newCatering;
+        price = newPrice;
     }
 
     public String getName()
@@ -49,7 +49,7 @@ public class Quotation
         return time;
     }
     
-    public boolean getCatering()
+    public int getCatering()
     {
         return catering;
     }
@@ -74,7 +74,7 @@ public class Quotation
         time = newTime;
     }
 
-    public void setCatering(boolean newCatering)
+    public void setCatering(int newCatering)
     {
         catering = newCatering;
     }

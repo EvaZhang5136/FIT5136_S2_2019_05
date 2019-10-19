@@ -14,6 +14,15 @@ public class Controller
         // initialise instance variables
         users = new ListOfUsers();
     }
+    
+    public void startApp()
+    {
+        //bookings.readFile();
+        users.readFile();
+        //halls.readFile();
+        //quotations.readFile();
+        welcome();
+    }
 
     public void welcome()
     {
@@ -45,22 +54,28 @@ public class Controller
         Scanner console = new Scanner(System.in);
         System.out.println("Please enter email address: ");
         String email = console.nextLine();
-        for(int i =0; i<5; i++){ //What is the range of i?
-            if(!email.equals(users.users.get(i).getEmail()))//Something wrong...
+        String passwd = console.nextLine();
+        for(int i =0; i<users.getNoOfUsers(); i++)
+        {
+            
+        }
+        /*
+         for(int i =0; i<users.getNoOfUsers(); i++){ //What is the range of i? // answer: Length of the users arraylist
+            if(!email.equals(users.getSpecificUsersEmail(i)))//Something wrong...
             {System.out.println("Please go to register!");
                 register();
             }
             else{
                 System.out.println("Please enter your password:");
                 String passwd = console.nextLine();
-                if (!passwd.equals(users.users.get(i).getPasswd()))
+                if (!passwd.equals(users.getSpecificUsersPassword(i))) // created a method in list of users to get specific users password
                 {System.out.println("Wrong password!");
                     passwd = console.nextLine();}
                 else{
                     System.out.println("Log in successful!");
                 }
             }
-        }
+        }*/
         for(int a = 0; a<3; a++)
             if(users.users.get(a).getType() == 1){
                 System.out.println("1. View halls");
@@ -103,23 +118,23 @@ public class Controller
 
     public void register()
     {
-        ArrayList<String> user = new ArrayList<>();
+        //ArrayList<String> user = new ArrayList<>();
         Scanner console = new Scanner(System.in);
         System.out.println("Please enter your first name：");
         String fname = console.nextLine();
-        user.add(0,fname);
+        //user.add(0,fname);
         System.out.println("Please enter your last name：");
         String lname = console.nextLine();
-        user.add(1,lname);
+        //user.add(1,lname);
         System.out.println("Please enter your email：");
         String email = console.nextLine();
-        user.add(2,email);
+        //user.add(2,email);
         System.out.println("Please enter your phone number：");
         String phoneNo = console.nextLine();
-        user.add(3,phoneNo);
+        //user.add(3,phoneNo);
         System.out.println("Please enter your address：");
         String address = console.nextLine();
-        user.add(4,address);
+        //user.add(4,address);
         System.out.println("Please enter 1,2 or 3 if you are 1.Customer 2. Owner 3.Administrator");
         int type = console.nextInt();
         while(type != 1 && type != 2 && type != 3)
@@ -127,8 +142,8 @@ public class Controller
             System.out.println("Error!Please enter 1,2 or 3 if you are 1.Customer 2. Owner 3.Administrator");
             type = console.nextInt();
         }
-        String typeS = Integer.toString(type);
-        user.add(5,typeS);
+        //String typeS = Integer.toString(type);
+        //user.add(5,typeS);
         System.out.println("Please enter your password：");
         String passwd1 = console.next();
         System.out.println("Please confirm your password：");
@@ -142,9 +157,11 @@ public class Controller
             passwd2 = console.nextLine();
         }
         String passwd = passwd1;
-        user.add(6,passwd);
-        user.add("\n");
+        //user.add(6,passwd);
+        //user.add("\n");
         //users.writeFile(User user);//Not sure how to use this method.
+        users.addUser(fname, lname, email, phoneNo, address, type, passwd);
+        users.writeFile();
     }
 
     public void logOut()
@@ -166,25 +183,27 @@ public class Controller
 
     public void requestQuotation()
     {
-        ArrayList<String> quotation = new ArrayList<>();
+        //ArrayList<String> quotation = new ArrayList<>();
         Scanner console = new Scanner(System.in);
 
         System.out.println("Enter the hall name: ");
         String name = console.nextLine();
-        quotation.add(0,name);
+        //quotation.add(0,name);
 
         System.out.println("Enter the date(dd/mm/yyyy): ");
         String date = console.nextLine();
-        quotation.add(1,date);
+        //quotation.add(1,date);
 
         System.out.println("Enter the time(hh): ");
         String time = console.nextLine();
-        quotation.add(2,time);
+        //quotation.add(2,time);
 
         System.out.println("Do you need catering? \n 1: Yes, I do.(Need to pay extra 20 dollars.); \n 2: No, I don't.");
         int c =console.nextInt();
+        int price = 0;
         if (c == 1){
-            System.out.println("Ctering had been selected");
+            System.out.println("Ctering had been selected. 20 dollars added");
+            price = 20;
 
         }
         else if (c == 2){
@@ -192,7 +211,10 @@ public class Controller
 
         }
         String catering = console.nextLine();
-        quotation.add(3,catering);
+        //quotation.add(3,catering);
+        
+        quotations.addQuotation(name, date, time, c, price);
+        quotations.writeFile();
 
         //System.out.println("The final price is: " + quotations.quotations.getCatering());
         //How can I add the price?
@@ -211,7 +233,7 @@ public class Controller
 
     public void bookHall()
     {
-        bookings.readFile();
+        //bookings.readFile();
         //May be a list of quotations should be displayed here.
         //(Or the user cannot know which quotation to select)
         //But readFile Method doesn`t create an arraylist.

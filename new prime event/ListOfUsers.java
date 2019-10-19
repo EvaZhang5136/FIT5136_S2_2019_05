@@ -33,15 +33,20 @@ public class ListOfUsers
      * @param  y  a sample parameter for a method
      * @return    the sum of x and y
      */
-    public void addUser()
+    public void addUser(String newFname, String newLname, String newEmail, String newPhone, String newAddr, int newType, String newPasswd)
     {
-        User racer = new User();
-        users.add(new User());
+        //User racer = new User();
+        users.add(new User(newFname, newLname, newEmail, newPhone, newAddr, newType, newPasswd));
     }
     
     public ArrayList<User> getListOfUsers()
     {
         return users;
+    }
+    
+    public int getNoOfUsers()
+    {
+        return users.size();
     }
     
     public User getSpecificUser(int index) throws NullPointerException
@@ -52,6 +57,41 @@ public class ListOfUsers
     public String getSpecificUsersName(int index) throws NullPointerException
     {
         return users.get(index).getFullName();
+    }
+    
+    public String getSpecificUsersFName(int index) throws NullPointerException
+    {
+        return users.get(index).getFname();
+    }
+    
+    public String getSpecificUsersLName(int index) throws NullPointerException
+    {
+        return users.get(index).getLname();
+    }
+    
+    public String getSpecificUsersEmail(int index) throws NullPointerException
+    {
+        return users.get(index).getEmail();
+    }
+    
+    public String getSpecificUsersPhone(int index) throws NullPointerException
+    {
+        return users.get(index).getPhoneNo();
+    }
+    
+    public String getSpecificUsersAddr(int index) throws NullPointerException
+    {
+        return users.get(index).getAddress();
+    } 
+    
+    public int getSpecificUsersType(int index) throws NullPointerException
+    {
+        return users.get(index).getType();
+    } 
+    
+    public String getSpecificUsersPassword(int index) throws NullPointerException
+    {
+        return users.get(index).getPasswd();
     }
     
     public void readFile() //chnage void to STring and return something
@@ -107,14 +147,22 @@ public class ListOfUsers
         
     }
     
-    public void writeFile(User user)
+    public void writeFile()
     {
         String filename = "user.txt";
+        int index = getNoOfUsers() - 1;
         try
         {
             FileWriter writer = new FileWriter(filename, true);
             BufferedWriter bw = new BufferedWriter(writer);
-            bw.write("\n" + user.getFname() + "," + user.getLname() + "," + user.getEmail() + "," + user.getPhoneNo() + "," + user.getAddress() + "," + user.getType()+ "," + user.getPasswd());
+            bw.newLine();
+            bw.write(getSpecificUsersFName(index) + 
+                    "," + getSpecificUsersLName(index) + 
+                    "," + getSpecificUsersEmail(index) + 
+                    "," + getSpecificUsersPhone(index) + 
+                    "," + getSpecificUsersAddr(index) + 
+                    "," + getSpecificUsersType(index)+ 
+                    "," + getSpecificUsersPassword(index));
             bw.flush();
         }
         catch(FileNotFoundException exception)
@@ -127,10 +175,8 @@ public class ListOfUsers
         }
     }
     
-    public void login()
-    {
-        
-    }
+    
+    
     
     
 }
