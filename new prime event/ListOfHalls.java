@@ -57,8 +57,10 @@ public class ListOfHalls
                     String hallPrice = hallValues[4];
                     String hallSize = hallValues[5];
                     String hallAvailability = hallValues[6];
+                    String hallReview = hallValues[7];
 
                     Hall hall = new Hall(hallName, hallAddr, hallDesc, hallFunction, Double.parseDouble(hallPrice), Double.parseDouble(hallSize), hallAvailability);
+                    hall.setHallReview(hallReview);
                     halls.add(hall);
 
                 }
@@ -127,6 +129,7 @@ public class ListOfHalls
     {
         for(Hall hall : halls) {
             if(hall.getHallAvailability().equals(keyword)) {
+                System.out.println(hall.getFullDetails());
                 return hall;
             }
         }

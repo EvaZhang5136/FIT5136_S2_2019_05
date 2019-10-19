@@ -7,14 +7,17 @@
 public class Quotation
 {
     // instance variables - replace the example below with your own
+    //private static int serialNo = 0;
     private String name;
     private String date;
     private String time;
     private int catering;
     private int price;
+    
 
     public Quotation()
     {
+        //serialNo++;
         name = "";
         date = "";
         time = "";
@@ -27,12 +30,18 @@ public class Quotation
      */
     public Quotation(String newName, String newDate, String newTime, int newCatering, int newPrice)
     {
+        //serialNo++; 
         name = newName;
         date = newDate;
         time = newTime;
         catering = newCatering;
         price = newPrice;
     }
+    
+    //public static int getSerialNo()
+    //{
+     //   return serialNo;
+    //}
 
     public String getName()
     {

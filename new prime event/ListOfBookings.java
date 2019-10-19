@@ -132,7 +132,7 @@ public class ListOfBookings
         
     }
     
-    public void writeFile(Booking booking)
+    public void writeFile()
     {
         String filename = "Booking.txt";
         int index = getNoOfBookings() -1;

@@ -39,6 +39,8 @@ public class ListOfUsers
         users.add(new User(newFname, newLname, newEmail, newPhone, newAddr, newType, newPasswd));
     }
     
+    
+    
     public ArrayList<User> getListOfUsers()
     {
         return users;

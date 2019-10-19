@@ -19,6 +19,7 @@ public class Hall
     private double hallPrice;
     private double hallSize;
     private String hallAvailability;
+    private String review;
 
     /**
      * Constructor for objects of class Hall
@@ -33,6 +34,7 @@ public class Hall
         hallPrice = 100;
         hallSize = 100;
         hallAvailability = "";
+        review = ""; 
     }
     
     public Hall(String newName, String newHallAddr, String newHallDesc, String newHallFunc, double newHallPrice, double newHallSize, String newHallAvail)
@@ -44,6 +46,7 @@ public class Hall
         hallPrice = newHallPrice;
         hallSize = newHallSize;
         hallAvailability = newHallAvail;
+        review = "";
     }
 
     /**
@@ -88,6 +91,7 @@ public class Hall
         return hallFunction;
     }
     
+       
     public void setHallFunction(String newFunction)
     {
         hallFunction = newFunction;
@@ -123,6 +127,16 @@ public class Hall
         hallAvailability = newAvailability;
     }
     
+    public String getHallReview()
+    {
+        return review;
+    }
+    
+    public void setHallReview(String newReview)
+    {
+        review = newReview;
+    }
+    
     public String getFullDetails()
     {
         String details = "Hall Name: " + hallName + "    "
@@ -131,7 +145,8 @@ public class Hall
                          + "Hall Function :" + hallFunction + "\n"
                          + "Hall Price : " + hallPrice + "\n"
                          + "Hall Size : " + hallSize + "\n"
-                         + "Hall Availability : " + hallAvailability + "\n";
+                         + "Hall Availability : " + hallAvailability + "\n"
+                         + "Review : " + review;
         // Note: 'votes' is currently included for testing purposes only. In the final
         // application, this will nt be shown. Instead, the vote count will be used to 
         // select and order the comments on screen.

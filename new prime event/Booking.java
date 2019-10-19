@@ -9,27 +9,27 @@ public class Booking
     private String name;
     private String date;
     private String time;
-    private int status;//1.Ongoing 2. Complished
+    private int status;//1.Ongoing 2. Complished 3. Future date
     //private ArrayList<Review> reviews;
     
 
     public Booking()
     {
         //Timestamp bookingNo = ;
-        String name = "";
-        String date = "";
-        String time = "";
-        int status = 1; 
+        name = "";
+        date = "";
+        time = "";
+        status = 1; 
         //reviews = new ArrayList<>();
     }
     
     public Booking(String newName, String newDate, String newTime, int newStatus)
     {
         //Timestamp bookingNo = ;
-        String name = newName;
-        String date = newDate;
-        String time = newTime;
-        int status = newStatus; 
+        name = newName;
+        date = newDate;
+        time = newTime;
+        status = newStatus; 
         //reviews = new ArrayList<>();
     }
     

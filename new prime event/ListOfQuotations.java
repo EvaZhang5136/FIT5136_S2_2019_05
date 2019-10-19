@@ -42,6 +42,12 @@ public class ListOfQuotations
     {
         return quotations.size();
     }
+    
+    
+    //public int getSerialNo()
+    //{
+      //  return Quotation.getSerialNo();
+    //}
 
     public Quotation getSpecificQuotation(int index) throws NullPointerException
     {
@@ -147,6 +153,18 @@ public class ListOfQuotations
         catch(IOException exception)
         {
             System.out.println("Unexpected I/O exception occured");
+        }
+    }
+    
+    public void display()
+    {
+        for(int i = 0; i < getNoOfQuotations(); i++)
+        {
+            System.out.println(i+1 + " " + getSpecificQuotationsName(i) + 
+                      " " + getSpecificQuotationsDate(i) + 
+                      " " + getSpecificQuotationsTime(i) +
+                      " " + getSpecificQuotationsCatering(i) +
+                      " " + getSpecificQuotationsPrice(i));
         }
     }
 }

@@ -17,10 +17,10 @@ public class Controller
     
     public void startApp()
     {
-        //bookings.readFile();
+        bookings.readFile();
         users.readFile();
-        //halls.readFile();
-        //quotations.readFile();
+        halls.readFile();
+        quotations.readFile();
         welcome();
     }
 
@@ -52,15 +52,47 @@ public class Controller
     public void logIn()
     {
         Scanner console = new Scanner(System.in);
+        System.out.println("Letś log you In");
         System.out.println("Please enter email address: ");
         String email = console.nextLine();
+        System.out.println("Please enter your password:");
         String passwd = console.nextLine();
-        for(int i =0; i<users.getNoOfUsers(); i++)
+        int counter = 0;
+        int position = 0;
+        for (int i = 0; i<users.getNoOfUsers(); i++)
         {
-            
+            if(email.equals(users.getSpecificUsersEmail(i)))
+            {
+                position = i;
+                counter = 1;
+                break;
+            }
+            else
+                counter = 0;
         }
+        //System.out.println(position + " " + counter);
+        if (counter == 1)
+        {
+            while(!passwd.equals(users.getSpecificUsersPassword(position)))
+            {
+                //System.out.println("Log in successful!");
+                System.out.println("Wrong password!");
+                System.out.println("Please enter your password again");
+                passwd = console.nextLine();
+            }
+            System.out.println("Log in successful!");
+        }
+        else 
+        {
+            System.out.println("Please go to register!");
+            register();
+            //System.out.println("Do nothing");
+        }
+        
         /*
-         for(int i =0; i<users.getNoOfUsers(); i++){ //What is the range of i? // answer: Length of the users arraylist
+         * 
+         
+        for(int i =0; i<users.getNoOfUsers(); i++){ //What is the range of i? // answer: Length of the users arraylist
             if(!email.equals(users.getSpecificUsersEmail(i)))//Something wrong...
             {System.out.println("Please go to register!");
                 register();
@@ -73,11 +105,57 @@ public class Controller
                     passwd = console.nextLine();}
                 else{
                     System.out.println("Log in successful!");
+                    break;
                 }
             }
         }*/
-        for(int a = 0; a<3; a++)
-            if(users.users.get(a).getType() == 1){
+        
+        if(users.users.get(position).getType() == 1)
+        {
+                System.out.println("1. View halls");
+                System.out.println("2. Select a hall");
+                System.out.println("3. Book a hall");
+                System.out.println("4. Request for a quotation");
+                System.out.println("5. View a booking");
+                System.out.println("6. Change a booking");
+                System.out.println("7. Cancel a booking");
+                System.out.println("8. Write a review");
+                System.out.println("Please enter 1-8 to select：");
+        }
+        else if(users.users.get(position).getType() == 2)
+        {
+                System.out.println("1. Create a hall");
+                System.out.println("2. Update a hall");
+                System.out.println("3. Delete a hall");
+                System.out.println("4. Update a booking");
+                System.out.println("5. View a booking");
+                System.out.println("6. Add discount");
+                System.out.println("7. Remove discount");
+                System.out.println("8. Manage payments");
+                System.out.println("9. Confirm a quotation");
+                System.out.println("10. Delete a quotation");
+                System.out.println("11. Confirm a refund");
+                System.out.println("12. Print receipt");
+                System.out.println("Please enter 1-12 to select：");
+        }
+        else if(users.users.get(position).getType() == 3)
+        {
+                System.out.println("1. Add users");
+                System.out.println("2. Update users");
+                System.out.println("3. Delete users");
+                System.out.println("4. Reset password");
+                System.out.println("5. Add discount");
+                System.out.println("6. Delete discount");
+                System.out.println("7. Identify password");
+                System.out.println("8. Identify roles");
+                System.out.println("Please enter 1-8 to select：");  
+        }
+        
+        /*
+        for(int a = 0; a<users.getNoOfUsers(); a++)
+        {
+            if(users.users.get(a).getType() == 1)
+            {
                 System.out.println("1. View halls");
                 System.out.println("2. Select a hall");
                 System.out.println("3. Book a hall");
@@ -88,7 +166,8 @@ public class Controller
                 System.out.println("8. Write a review");
                 System.out.println("Please enter 1-8 to select：");
             }
-            else if(users.users.get(a).getType() == 2){
+            else if(users.users.get(a).getType() == 2)
+            {
                 System.out.println("1. Create a hall");
                 System.out.println("2. Update a hall");
                 System.out.println("3. Delete a hall");
@@ -103,7 +182,8 @@ public class Controller
                 System.out.println("12. Print receipt");
                 System.out.println("Please enter 1-12 to select：");
             }
-            else if(users.users.get(a).getType() == 3){
+            else if(users.users.get(a).getType() == 3)
+            {
                 System.out.println("1. Add users");
                 System.out.println("2. Update users");
                 System.out.println("3. Delete users");
@@ -114,6 +194,7 @@ public class Controller
                 System.out.println("8. Identify roles");
                 System.out.println("Please enter 1-8 to select：");  
             }
+        }*/
     }
 
     public void register()
@@ -162,6 +243,8 @@ public class Controller
         //users.writeFile(User user);//Not sure how to use this method.
         users.addUser(fname, lname, email, phoneNo, address, type, passwd);
         users.writeFile();
+        logIn();
+
     }
 
     public void logOut()
@@ -199,7 +282,7 @@ public class Controller
         //quotation.add(2,time);
 
         System.out.println("Do you need catering? \n 1: Yes, I do.(Need to pay extra 20 dollars.); \n 2: No, I don't.");
-        int c =console.nextInt();
+        int c = console.nextInt();
         int price = 0;
         if (c == 1){
             System.out.println("Ctering had been selected. 20 dollars added");
@@ -215,8 +298,9 @@ public class Controller
         
         quotations.addQuotation(name, date, time, c, price);
         quotations.writeFile();
+        int index = quotations.getNoOfQuotations() - 1;
 
-        //System.out.println("The final price is: " + quotations.quotations.getCatering());
+        System.out.println("The final price is: " + quotations.getSpecificQuotationsPrice(index));
         //How can I add the price?
         System.out.println("Are you sure to continue? \n 1: Yes, I will book this hall; \n 2: No, back to last step.");
         System.out.println("Please enter 1-2 to continue.");
@@ -233,7 +317,7 @@ public class Controller
 
     public void bookHall()
     {
-        //bookings.readFile();
+        quotations.display();
         //May be a list of quotations should be displayed here.
         //(Or the user cannot know which quotation to select)
         //But readFile Method doesn`t create an arraylist.
@@ -248,11 +332,19 @@ public class Controller
         else
         {
             System.out.println("Quotation " + quotation+ "has been selected");
+            System.out.println("You have selected : " + quotations.getSpecificQuotationsName(quotation - 1)+ " Please pay : " + quotations.getSpecificQuotationsPrice(quotation - 1));
             System.out.println("Please enter you card number to pay a deposit:");
             String cardNo = console.nextLine();
             System.out.println("Please enter you PIN:");
             int pin = console.nextInt();
             System.out.println("Transaction successful!");
+            System.out.println("Booking successful!");
+            String name = quotations.getSpecificQuotationsName(quotation - 1);
+            String date = quotations.getSpecificQuotationsDate(quotation - 1);
+            String time = quotations.getSpecificQuotationsTime(quotation - 1);
+            int status = 3;
+            bookings.addBooking(name, date, time, status);
+            bookings.writeFile();
             //bookingNo = new Timestamp(System.currentTimeMillis());
         }
     }

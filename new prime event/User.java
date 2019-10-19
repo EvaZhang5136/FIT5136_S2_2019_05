@@ -10,24 +10,24 @@ public class User
     
     public User()
     {
-        String fname = "";
-        String lname = "";
-        String email = "";
-        String phoneNo = "";
-        String address = "";
-        int type = 1;//1.Customer 2.Owner 3.Admin
-        String passwd = "";
+        fname = "";
+        lname = "";
+        email = "";
+        phoneNo = "";
+        address = "";
+        type = 1;//1.Customer 2.Owner 3.Admin
+        passwd = "";
     }
     
     public User(String newFname, String newLname, String newEmail, String newPhone, String newAddr, int newType, String newPasswd)
     {
-        String fname = newFname;
-        String lname = newLname;
-        String email = newEmail;
-        String phoneNo = newPhone;
-        String address = newAddr;
-        int type = newType;//1.Customer 2.Owner 3.Admin
-        String passwd = newPasswd;
+        fname = newFname;
+        lname = newLname;
+        email = newEmail;
+        phoneNo = newPhone;
+        address = newAddr;
+        type = newType;//1.Customer 2.Owner 3.Admin
+        passwd = newPasswd;
     }
     public String getFullName()
     {
