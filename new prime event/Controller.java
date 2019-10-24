@@ -94,7 +94,7 @@ public class Controller
                
         if(users.users.get(position).getType() == 1)
         {
-                System.out.println("1. View halls");
+                System.out.println("1. Search halls");
                 System.out.println("2. Select a hall");
                 System.out.println("3. Book a hall");
                 System.out.println("4. Request for a quotation");
@@ -103,6 +103,22 @@ public class Controller
                 System.out.println("7. Cancel a booking");
                 System.out.println("8. Write a review");
                 System.out.println("Please enter 1-8 to select：");
+                String selection = console.nextLine();
+                switch (selection)
+                {
+                    case "1":
+                        searchHallInput();   break;
+            
+                    case "3":
+                        bookHall();  break;
+            
+                    case "4":
+                        requestQuotation();  break;
+            
+                    case "8":
+                        writeReview();  break;
+                    
+                }
         }
         else if(users.users.get(position).getType() == 2)
         {
@@ -284,7 +300,7 @@ public class Controller
     {
         halls.display();
         Scanner console = new Scanner(System.in);
-        System.out.println("Please enter the hall name you widh to write a review on");
+        System.out.println("Please enter the hall name you wish to write a review on");
         String hallName=console.nextLine();
         String review = "";
         int counter = 0;
@@ -308,7 +324,7 @@ public class Controller
             System.out.println("Please write a review : ");
             review = console.nextLine();
             halls.setSpecificHallsReview(position, review);
-            System.out.println("Log in successful!");
+            System.out.println("Review Submitted!");
         }
         
     }
